@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Valentine 💘</title>
+  <style>
+    body {
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #ffb6c1, #ffc0cb);
+      text-align: center;
+    }
+
+    .container {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+      color: #ff4d6d;
+      margin-bottom: 30px;
+    }
+
+    button {
+      font-size: 20px;
+      padding: 12px 25px;
+      margin: 10px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    #yesBtn {
+      background-color: #ff4d6d;
+      color: white;
+    }
+
+    #noBtn {
+      background-color: #eee;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Will you be my Valentine? 💘</h1>
+    <button id="yesBtn">YES</button>
+    <button id="noBtn">NO</button>
+  </div>
+
+  <script>
+    const yesBtn = document.getElementById("yesBtn");
+    const noBtn = document.getElementById("noBtn");
+
+    let yesSize = 20;
+    let noMessages = [
+      "are you sure?",
+      "mamsh u sure",
+      "mamshieee",
+      "just say yes mamsh",
+      "mamshie pleaseeee"
+    ];
+    let clickCount = 0;
+
+    noBtn.addEventListener("click", () => {
+      yesSize += 10;
+      yesBtn.style.fontSize = yesSize + "px";
+      yesBtn.style.padding = (yesSize / 2) + "px";
+
+      noBtn.innerText = noMessages[clickCount % noMessages.length];
+      clickCount++;
+    });
+
+    yesBtn.addEventListener("click", () => {
+      document.body.innerHTML = `
+        <h1 style="color:#ff4d6d; font-family:Arial; text-align:center;">
+          i love u sm mamshiee! 💖
+        </h1>
+      `;
+    });
+  </script>
+
+</body>
+</html>
